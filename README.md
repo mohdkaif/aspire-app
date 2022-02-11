@@ -14,18 +14,12 @@ create .env file in root directory if .env not exist
 copy from .env.example and paste in .env
 change database configuration accordingly
 
-# Step 4:
- run command 
-# Step 5:
- composer install
-# Step 6:
- php artisan key:generate
-# Step 7:
- php artisan migrate
-# Step 8:
- php artisan passport:install
-# Step 9:
- php artisan serve
+# run command for setup:
+ - composer install
+ - php artisan key:generate
+ - php artisan migrate
+ - php artisan passport:install
+ - php artisan serve
 
  ## Api End Point
 
