@@ -1,0 +1,512 @@
+{
+	"info": {
+		"_postman_id": "7fd1e406-ce3c-4b4a-bd5f-4d0f5da76730",
+		"name": "aspire-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "Register",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "admin",
+											"type": "default"
+										},
+										{
+											"key": "email",
+											"value": "admin@gmail.com",
+											"type": "default"
+										},
+										{
+											"key": "password",
+											"value": "12345678",
+											"type": "default"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "12345678",
+											"type": "default"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain}}/admin/auth/register",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"admin",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "admin@gmail.com",
+											"type": "default"
+										},
+										{
+											"key": "password",
+											"value": "12345678",
+											"type": "default"
+										},
+										{
+											"key": "",
+											"value": "",
+											"type": "default",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/admin/auth/login",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"admin",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Loan Request approved or decline",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5NTkyYzQ3Zi05YmViLTRiNzAtYjMzYy1kMGE2ZmFkOTFkZTciLCJqdGkiOiJiZGZmNWI3OGY4YzM4MzZmZWM5YjlkNzQ1MGExN2YzNzljNGQ5ZjhiZDZmYjE3MWMxYTU1Y2Y3ZDc1NjdkNTgzYzE1ODYyNWRjYmUyYWE2NiIsImlhdCI6MTY0NDU3NjQ1OC4yMjkzMjcsIm5iZiI6MTY0NDU3NjQ1OC4yMjkzNDMsImV4cCI6MTY3NjExMjQ1OC4yMDkxMywic3ViIjoiMiIsInNjb3BlcyI6W119.y4IdLSUk1h2Xa8I9hExR4SUwSL-0SUAn9uArls-Qxn6_g45WGPOFevAu9xRryKWF7O4J5xu_GOebapQnv9C4Hl-gBSE9heHcjloRsMjdjcINaatAkyxYevJ5tAk_bNZTnRzFKPH-wdEkhOeY3ORx5WKvLiS-k7XBav4_6YsiAZs7dd2wPhX5BFh_MfyN7eOKUWcQZkLbvgWGTL-23sNEGnsLrHPyoqTXrOtoYyz89um-OVnDFmG1laAziZaQx3T1hc5Sxm9Z1GSuMmG6cCiVSaOzMy6v1gKTvpPs_TbskRswL0GssXlH3_IQsqkbiglFu4iylobtV_KWTQRN52J-afJDTZpbj-0egwzjPp-exzbhpozRf2ULjL_Y9narbpC0TBhoZXuaHpAKlZKYKBask_8t35g-7duQh_l4gRKvXDgu7x7vXvG28A7mOkq4_r9SMJwBL4FBO0X4wDmMNwCalh77tKoJzX2zzsEuVosHZ_BUPq2CbJd8P9roGMCAArqQ4a8scqXQm7XeJV-na4OaO0D0EZiPbCACH8SiFlDbYtC0REmGiGcbcjQnbLmOu6PJafBLCCZHaCiP6W-AOpVYPDQxlkE3utCGu4_Jjynzwh8RW6evIYE7InAKCtDEYS8QXP02dsKoQJWenby_Pql08H6NMyMejw_b9DD-d-EO3Is",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "status",
+									"value": "approved",
+									"description": "approved,decline",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/admin/change_loan_request_status/1",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"admin",
+								"change_loan_request_status",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Loan-List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5NTkyYzQ3Zi05YmViLTRiNzAtYjMzYy1kMGE2ZmFkOTFkZTciLCJqdGkiOiJiZGZmNWI3OGY4YzM4MzZmZWM5YjlkNzQ1MGExN2YzNzljNGQ5ZjhiZDZmYjE3MWMxYTU1Y2Y3ZDc1NjdkNTgzYzE1ODYyNWRjYmUyYWE2NiIsImlhdCI6MTY0NDU3NjQ1OC4yMjkzMjcsIm5iZiI6MTY0NDU3NjQ1OC4yMjkzNDMsImV4cCI6MTY3NjExMjQ1OC4yMDkxMywic3ViIjoiMiIsInNjb3BlcyI6W119.y4IdLSUk1h2Xa8I9hExR4SUwSL-0SUAn9uArls-Qxn6_g45WGPOFevAu9xRryKWF7O4J5xu_GOebapQnv9C4Hl-gBSE9heHcjloRsMjdjcINaatAkyxYevJ5tAk_bNZTnRzFKPH-wdEkhOeY3ORx5WKvLiS-k7XBav4_6YsiAZs7dd2wPhX5BFh_MfyN7eOKUWcQZkLbvgWGTL-23sNEGnsLrHPyoqTXrOtoYyz89um-OVnDFmG1laAziZaQx3T1hc5Sxm9Z1GSuMmG6cCiVSaOzMy6v1gKTvpPs_TbskRswL0GssXlH3_IQsqkbiglFu4iylobtV_KWTQRN52J-afJDTZpbj-0egwzjPp-exzbhpozRf2ULjL_Y9narbpC0TBhoZXuaHpAKlZKYKBask_8t35g-7duQh_l4gRKvXDgu7x7vXvG28A7mOkq4_r9SMJwBL4FBO0X4wDmMNwCalh77tKoJzX2zzsEuVosHZ_BUPq2CbJd8P9roGMCAArqQ4a8scqXQm7XeJV-na4OaO0D0EZiPbCACH8SiFlDbYtC0REmGiGcbcjQnbLmOu6PJafBLCCZHaCiP6W-AOpVYPDQxlkE3utCGu4_Jjynzwh8RW6evIYE7InAKCtDEYS8QXP02dsKoQJWenby_Pql08H6NMyMejw_b9DD-d-EO3Is",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{domain}}/admin/loan_list",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"admin",
+								"loan_list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Loan-Details",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5NTkyYzQ3Zi05YmViLTRiNzAtYjMzYy1kMGE2ZmFkOTFkZTciLCJqdGkiOiJiZGZmNWI3OGY4YzM4MzZmZWM5YjlkNzQ1MGExN2YzNzljNGQ5ZjhiZDZmYjE3MWMxYTU1Y2Y3ZDc1NjdkNTgzYzE1ODYyNWRjYmUyYWE2NiIsImlhdCI6MTY0NDU3NjQ1OC4yMjkzMjcsIm5iZiI6MTY0NDU3NjQ1OC4yMjkzNDMsImV4cCI6MTY3NjExMjQ1OC4yMDkxMywic3ViIjoiMiIsInNjb3BlcyI6W119.y4IdLSUk1h2Xa8I9hExR4SUwSL-0SUAn9uArls-Qxn6_g45WGPOFevAu9xRryKWF7O4J5xu_GOebapQnv9C4Hl-gBSE9heHcjloRsMjdjcINaatAkyxYevJ5tAk_bNZTnRzFKPH-wdEkhOeY3ORx5WKvLiS-k7XBav4_6YsiAZs7dd2wPhX5BFh_MfyN7eOKUWcQZkLbvgWGTL-23sNEGnsLrHPyoqTXrOtoYyz89um-OVnDFmG1laAziZaQx3T1hc5Sxm9Z1GSuMmG6cCiVSaOzMy6v1gKTvpPs_TbskRswL0GssXlH3_IQsqkbiglFu4iylobtV_KWTQRN52J-afJDTZpbj-0egwzjPp-exzbhpozRf2ULjL_Y9narbpC0TBhoZXuaHpAKlZKYKBask_8t35g-7duQh_l4gRKvXDgu7x7vXvG28A7mOkq4_r9SMJwBL4FBO0X4wDmMNwCalh77tKoJzX2zzsEuVosHZ_BUPq2CbJd8P9roGMCAArqQ4a8scqXQm7XeJV-na4OaO0D0EZiPbCACH8SiFlDbYtC0REmGiGcbcjQnbLmOu6PJafBLCCZHaCiP6W-AOpVYPDQxlkE3utCGu4_Jjynzwh8RW6evIYE7InAKCtDEYS8QXP02dsKoQJWenby_Pql08H6NMyMejw_b9DD-d-EO3Is",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{domain}}/admin/loan_details/1",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"admin",
+								"loan_details",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "user@gmail.com",
+											"type": "default"
+										},
+										{
+											"key": "password",
+											"value": "12345678",
+											"type": "default"
+										},
+										{
+											"key": "",
+											"value": "",
+											"type": "default",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/user/auth/login",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"user",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Register",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "User",
+											"type": "default"
+										},
+										{
+											"key": "email",
+											"value": "user@gmail.com",
+											"type": "default"
+										},
+										{
+											"key": "password",
+											"value": "12345678",
+											"type": "default"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "12345678",
+											"type": "default"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain}}/user/auth/register",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"user",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Loan Request",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5NTkyYzQ3Zi05YmViLTRiNzAtYjMzYy1kMGE2ZmFkOTFkZTciLCJqdGkiOiI4NzAwMGEyYmExMWM3MjkwYjQ1MGM3NTg5NGViNGI5ZmJkN2E2MTgyMWFkMmNmYTUzZDY3YmViNzMxZGUyYmU0ZjUwNTg2MzVkNjI3NjliNCIsImlhdCI6MTY0NDU3NjEwNy40NzM4NjQsIm5iZiI6MTY0NDU3NjEwNy40NzM4NzQsImV4cCI6MTY3NjExMjEwNy40MzkzNDYsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.Jf5l-wpyVAM1o5466hEAsuiaU736dirIutEi-8UhKR7yVqGxTMKy6FdxuqsSUFDNDXwWOS9fAMdZasTsuSMSC9FWhhqsLsYdAHHPP84JSRSmq0bk75IkMjQ_mOQ_gdSkFomDpZFQn2qAdnIIWYjyBRw75zbevQx3-yKQyZjUjZRirBhRxfIh4wq0fF3j_3zkADRNdEsh0s4C24o7q24huwXrX0CDBU2FWiQf0ZTArMAezgHTAkJyMhm_QnGq2Ev52ZAZb4ef4FzRGBhqmsogTv1VAp6jGZ9iBxaTvu0ii9sBJ94LFH2WhGUswnAbiHEOeN4o-XtytQ-IIiz1mI3uyTmfKtRzGvAiLWr8saOwUoxWNGosfYaPDvwsPGGn-UsURM6SfWZNCKFWlH8JlR1Toe9IDscZdpfe6r3qfxr-U_XAVmgugwy5snlAkwHIKcZqFVH-tXZGSNVX3WrUVqwlZwk8UoGfwhrI0S7CJYu07ahIfGNVjDCjiUxv3pVoYaVuJ7UEPaG-jldNIYtf19IRIDhWFDKKQV0bhpt6p9OrkPc2z49p2Uq5UPDhWNx_bo22WwE_RwCBKFt7dyzYoR1Cb3nyFKizYw8mBCjlA7ICORg9W5c1J8stOlVLk_xMqqHUH2w066FCJB1nzLejigz60djQlOPoIEU-BONiRaW29os",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "amount",
+									"value": "1000",
+									"type": "default"
+								},
+								{
+									"key": "duration",
+									"value": "4",
+									"description": "Number of week",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/user/loan_rerquest",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"user",
+								"loan_rerquest"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Loan - Make Payment",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5NTkyYzQ3Zi05YmViLTRiNzAtYjMzYy1kMGE2ZmFkOTFkZTciLCJqdGkiOiI4NzAwMGEyYmExMWM3MjkwYjQ1MGM3NTg5NGViNGI5ZmJkN2E2MTgyMWFkMmNmYTUzZDY3YmViNzMxZGUyYmU0ZjUwNTg2MzVkNjI3NjliNCIsImlhdCI6MTY0NDU3NjEwNy40NzM4NjQsIm5iZiI6MTY0NDU3NjEwNy40NzM4NzQsImV4cCI6MTY3NjExMjEwNy40MzkzNDYsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.Jf5l-wpyVAM1o5466hEAsuiaU736dirIutEi-8UhKR7yVqGxTMKy6FdxuqsSUFDNDXwWOS9fAMdZasTsuSMSC9FWhhqsLsYdAHHPP84JSRSmq0bk75IkMjQ_mOQ_gdSkFomDpZFQn2qAdnIIWYjyBRw75zbevQx3-yKQyZjUjZRirBhRxfIh4wq0fF3j_3zkADRNdEsh0s4C24o7q24huwXrX0CDBU2FWiQf0ZTArMAezgHTAkJyMhm_QnGq2Ev52ZAZb4ef4FzRGBhqmsogTv1VAp6jGZ9iBxaTvu0ii9sBJ94LFH2WhGUswnAbiHEOeN4o-XtytQ-IIiz1mI3uyTmfKtRzGvAiLWr8saOwUoxWNGosfYaPDvwsPGGn-UsURM6SfWZNCKFWlH8JlR1Toe9IDscZdpfe6r3qfxr-U_XAVmgugwy5snlAkwHIKcZqFVH-tXZGSNVX3WrUVqwlZwk8UoGfwhrI0S7CJYu07ahIfGNVjDCjiUxv3pVoYaVuJ7UEPaG-jldNIYtf19IRIDhWFDKKQV0bhpt6p9OrkPc2z49p2Uq5UPDhWNx_bo22WwE_RwCBKFt7dyzYoR1Cb3nyFKizYw8mBCjlA7ICORg9W5c1J8stOlVLk_xMqqHUH2w066FCJB1nzLejigz60djQlOPoIEU-BONiRaW29os",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "amount",
+									"value": "262.5",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/user/make_payment/1",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"user",
+								"make_payment",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Loan-List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5NTkyYzQ3Zi05YmViLTRiNzAtYjMzYy1kMGE2ZmFkOTFkZTciLCJqdGkiOiI4NzAwMGEyYmExMWM3MjkwYjQ1MGM3NTg5NGViNGI5ZmJkN2E2MTgyMWFkMmNmYTUzZDY3YmViNzMxZGUyYmU0ZjUwNTg2MzVkNjI3NjliNCIsImlhdCI6MTY0NDU3NjEwNy40NzM4NjQsIm5iZiI6MTY0NDU3NjEwNy40NzM4NzQsImV4cCI6MTY3NjExMjEwNy40MzkzNDYsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.Jf5l-wpyVAM1o5466hEAsuiaU736dirIutEi-8UhKR7yVqGxTMKy6FdxuqsSUFDNDXwWOS9fAMdZasTsuSMSC9FWhhqsLsYdAHHPP84JSRSmq0bk75IkMjQ_mOQ_gdSkFomDpZFQn2qAdnIIWYjyBRw75zbevQx3-yKQyZjUjZRirBhRxfIh4wq0fF3j_3zkADRNdEsh0s4C24o7q24huwXrX0CDBU2FWiQf0ZTArMAezgHTAkJyMhm_QnGq2Ev52ZAZb4ef4FzRGBhqmsogTv1VAp6jGZ9iBxaTvu0ii9sBJ94LFH2WhGUswnAbiHEOeN4o-XtytQ-IIiz1mI3uyTmfKtRzGvAiLWr8saOwUoxWNGosfYaPDvwsPGGn-UsURM6SfWZNCKFWlH8JlR1Toe9IDscZdpfe6r3qfxr-U_XAVmgugwy5snlAkwHIKcZqFVH-tXZGSNVX3WrUVqwlZwk8UoGfwhrI0S7CJYu07ahIfGNVjDCjiUxv3pVoYaVuJ7UEPaG-jldNIYtf19IRIDhWFDKKQV0bhpt6p9OrkPc2z49p2Uq5UPDhWNx_bo22WwE_RwCBKFt7dyzYoR1Cb3nyFKizYw8mBCjlA7ICORg9W5c1J8stOlVLk_xMqqHUH2w066FCJB1nzLejigz60djQlOPoIEU-BONiRaW29os",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{domain}}/user/loan_list",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"user",
+								"loan_list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Loan-Details",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5NTkyYzQ3Zi05YmViLTRiNzAtYjMzYy1kMGE2ZmFkOTFkZTciLCJqdGkiOiI4NzAwMGEyYmExMWM3MjkwYjQ1MGM3NTg5NGViNGI5ZmJkN2E2MTgyMWFkMmNmYTUzZDY3YmViNzMxZGUyYmU0ZjUwNTg2MzVkNjI3NjliNCIsImlhdCI6MTY0NDU3NjEwNy40NzM4NjQsIm5iZiI6MTY0NDU3NjEwNy40NzM4NzQsImV4cCI6MTY3NjExMjEwNy40MzkzNDYsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.Jf5l-wpyVAM1o5466hEAsuiaU736dirIutEi-8UhKR7yVqGxTMKy6FdxuqsSUFDNDXwWOS9fAMdZasTsuSMSC9FWhhqsLsYdAHHPP84JSRSmq0bk75IkMjQ_mOQ_gdSkFomDpZFQn2qAdnIIWYjyBRw75zbevQx3-yKQyZjUjZRirBhRxfIh4wq0fF3j_3zkADRNdEsh0s4C24o7q24huwXrX0CDBU2FWiQf0ZTArMAezgHTAkJyMhm_QnGq2Ev52ZAZb4ef4FzRGBhqmsogTv1VAp6jGZ9iBxaTvu0ii9sBJ94LFH2WhGUswnAbiHEOeN4o-XtytQ-IIiz1mI3uyTmfKtRzGvAiLWr8saOwUoxWNGosfYaPDvwsPGGn-UsURM6SfWZNCKFWlH8JlR1Toe9IDscZdpfe6r3qfxr-U_XAVmgugwy5snlAkwHIKcZqFVH-tXZGSNVX3WrUVqwlZwk8UoGfwhrI0S7CJYu07ahIfGNVjDCjiUxv3pVoYaVuJ7UEPaG-jldNIYtf19IRIDhWFDKKQV0bhpt6p9OrkPc2z49p2Uq5UPDhWNx_bo22WwE_RwCBKFt7dyzYoR1Cb3nyFKizYw8mBCjlA7ICORg9W5c1J8stOlVLk_xMqqHUH2w066FCJB1nzLejigz60djQlOPoIEU-BONiRaW29os",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{domain}}/user/loan_details/1",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"user",
+								"loan_details",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
